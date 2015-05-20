@@ -1,22 +1,49 @@
-<html ng-app>
+<!DOCTYPE html>
+<html lang="en" ng-app="listado">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width">
-	<title>Curso de Angular</title>
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0-rc.2/angular.min.js"></script>
+	<meta charset="UTF-8">
+	<title>Mi primer controlador</title>
+	
+	<!-- add jquery to proyect -->
+	<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<!-- add boostrap to proyect -->
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	<!-- add angularjs to proyect -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0-rc.2/angular.min.js"></script>
+	
+
+	<link href="css/style.css" rel="stylesheet">
+	<script src="js/app.js"></script>
+
+
 </head>
 <body>
-	<div ng-controller="productoController as prodCtrl">
-		<h1>Nombre del producto</h1>
-		<h2>tipo de producto</h2>
-		<img src="img/producto.jpg" />
-		<ul>
-			<li>Tipo: xx   </li>
-			<li>Peso: xx   </li>
-			<li>Tamaño: xx </li>
-			<li>Precio: xx </li>
-			<li>Garantia: xx   </li>
-		</ul>
+	<div class="container">
+		<div class="col-lg-12">
+			<h1>Compu Mundo Hiper Mega Red</h1>
+		</div>
+		<section class="listado" ng-controller="productoController" >
+
+			<div id="producto" class="col-lg-3 col-md-3 producto" ng-repeat="producto in productos">
+				<h3>{{producto.nombre}}</h3>
+				<img class="imgListado" src="{{producto.url}}" alt="{{producto.nombre}}">
+				<p class="cabecera">
+					{{producto.cabecera}}
+				</p>
+				<ul>
+					<li><b>ID:</b> {{producto.id}}</li>
+					<li><b>Peso:</b> {{producto.peso}}</li>
+					<li><b>Tama&ntilde;o:</b> {{producto.tamano}}</li>
+					<li><b>Precio:</b> {{producto.precio}}</li>
+					<li><b>Garantia:</b> {{producto.garantia}}</li>
+				</ul>
+				<a href="#/producto/{{producto.id}}" class="btn btn-primary" >Ver producto</a>
+			</div>
+		</section>
+
 	</div>
+
+
 </body>
 </html>

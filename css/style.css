@@ -1,0 +1,30 @@
+h1, h2, h3, h4, h5{
+	text-align: center;
+}
+
+img.imgListado{
+	width:  250px;
+	height: 150px;
+}
+
+
+.producto{
+	border-radius: 10px;
+	padding-bottom: 2%;
+}
+
+#producto{
+	margin-top: 3%;
+}
+
+#producto:nth-child(odd) {
+    background: #e0e0e0;
+}
+
+#producto:nth-child(even) {
+    background: #c9c9c9;
+}
+
+.btn-primary{
+	margin-top: 4%;
+}
